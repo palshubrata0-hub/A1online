@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ISP Packages</title>
+
+  <style>
+
+    body{
+      background:#0f172a;
+      font-family:Arial;
+      color:white;
+    }
+
+    .package-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      padding:50px;
+    }
+
+    .package{
+      background:#1e293b;
+      padding:40px 25px;
+      border-radius:18px;
+
+      /* Animation */
+      opacity:0;
+      transform:translateY(60px);
+      animation:showCard 1s ease forwards;
+    }
+
+    .package:nth-child(1){
+      animation-delay:0.3s;
+    }
+
+    .package:nth-child(2){
+      animation-delay:0.6s;
+    }
+
+    .package:nth-child(3){
+      animation-delay:0.9s;
+    }
+
+    @keyframes showCard{
+
+      0%{
+        opacity:0;
+        transform:translateY(60px);
+      }
+
+      100%{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="package-list">
+
+    <div class="package">
+      <h2>Basic Package</h2>
+      <h1>৳500</h1>
+      <p>20 Mbps Internet</p>
+    </div>
+
+    <div class="package">
+      <h2>Standard Package</h2>
+      <h1>৳800</h1>
+      <p>50 Mbps Internet</p>
+    </div>
+
+    <div class="package">
+      <h2>Premium Package</h2>
+      <h1>৳1200</h1>
+      <p>100 Mbps Internet</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
