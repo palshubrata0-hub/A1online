@@ -1,0 +1,209 @@
+
+
+       <header>
+
+  <div class="logo">A1 ONLINE</div>
+
+  <nav>
+    <a href="hh.html">Home</a>
+    <a href="about.html">About</a>
+    
+    <a href="contact.html">Contact</a>
+    <a href="pakage.html">Package</a>
+    <a href="https://server.aoneonlinebd.net/">FTP</a>
+  </nav>
+</header>
+<body>
+    <style>
+/* Navbar Style */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:20px;
+  background:#0f172a;
+}
+
+/* Glowing Button */
+nav a{
+  position:relative;
+  text-decoration:none;
+  color:white;
+  padding:12px 28px;
+  border:2px solid #00ffff;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  overflow:hidden;
+  transition:0.4s;
+  box-shadow:0 0 10px #00ffff;
+}
+
+/* Hover Effect */
+nav a:hover{
+  background:#00ffff;
+  color:#000;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff,
+    0 0 80px #00ffff;
+  transform:translateY(-3px) scale(1.05);
+}
+
+/* Active Click Effect */
+nav a:active{
+  transform:scale(0.95);
+}
+
+/* Animated Glow */
+nav a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transition:0.6s;
+}
+
+nav a:hover::before{
+  left:100%;
+}
+</style>
+
+
+
+
+    
+</body>
+
+
+
+<!-- Contact Registration Form -->
+<section class="contact-form">
+
+  <h2>Customer Registration</h2>
+
+  <form onsubmit="sendToWhatsApp(); return false;">
+
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <input type="text" id="phone" placeholder="Phone Number" required>
+
+    <input type="text" id="address" placeholder="Address" required>
+
+    <select id="package">
+      <option>20 Mbps - 525 TK</option>
+      <option>30 Mbps - 725 TK</option>
+      <option>50 Mbps - 1025 TK</option>
+       <option>50 Mbps - 1025 TK</option>
+        <option>70 Mbps - 1575 TK</option>
+         <option>100 Mbps - 2100 TK</option>
+          <option>150 Mbps - 3150 TK</option>
+           <option>200 Mbps - 4200 TK</option>
+    </select>
+
+    <button type="submit">Submit</button>
+
+  </form>
+</section>
+
+<style>
+
+body{
+  background:#2F4F4F;
+  font-family:Arial;
+}
+
+/* Form Design */
+.contact-form{
+  width:350px;
+  margin:60px auto;
+  background:#1f3535;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 20px cyan;
+}
+
+.contact-form h2{
+  color:white;
+  margin-bottom:20px;
+}
+
+.contact-form input,
+.contact-form select{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+}
+
+.contact-form button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:cyan;
+  color:black;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.contact-form button:hover{
+  box-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 40px cyan;
+  transform:scale(1.03);
+}
+
+</style>
+
+<script>
+
+function sendToWhatsApp(){
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let package = document.getElementById("package").value;
+
+  let message =
+`New Customer Registration
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+Package: ${package}`;
+
+  let whatsappNumber = "8801766395683";
+
+  let url =
+"https://wa.me/" + whatsappNumber + "?text="
++ encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+
+</script>
+<body>
+
+<link rel="stylesheet" href="about.css">
+
+  
+    
+</body>
