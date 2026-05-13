@@ -1,409 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A1 ONLINE</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<title>A1 ONLINE</title>
 
-    body{
-      background:#0f172a;
-      color:white;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    header{
-      background:#111827;
-      padding:15px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-    }
+<style>
 
-    .logo{
-      font-size:28px;
-      font-weight:bold;
-      color:#38bdf8;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      transition:0.3s;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    nav a:hover{
-      color:#38bdf8;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
 
-    .hero{
-      height:90vh;
-      background:url('https://images.unsplash.com/photo-1520869562399-e772f042f422?q=80&w=1600&auto=format&fit=crop') center/cover;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-    }
+/* =========================
+   HEADER
+========================= */
 
-    .hero::before{
-      content:'';
-      position:absolute;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.6);
-    }
+header{
+  width:100%;
+  background:rgba(15,23,42,0.95);
+  backdrop-filter:blur(10px);
+  padding:15px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    .hero-content{
-      position:relative;
-      z-index:1;
-    }
+.logo{
+  font-size:30px;
+  font-weight:700;
+  color:#38bdf8;
+  letter-spacing:1px;
+}
 
-    .hero h1{
-      font-size:55px;
-      margin-bottom:20px;
-    }
+nav{
+  display:flex;
+  gap:15px;
+}
 
-    .hero p{
-      font-size:20px;
-      margin-bottom:30px;
-    }
+nav a{
+  text-decoration:none;
+  color:white;
+  padding:12px 22px;
+  border:2px solid #38bdf8;
+  border-radius:12px;
+  transition:0.4s;
+  font-weight:500;
+  box-shadow:0 0 10px rgba(56,189,248,0.4);
+}
 
-    .btn{
-      background:#38bdf8;
-      padding:14px 30px;
-      color:white;
-      text-decoration:none;
-      border-radius:6px;
-      font-size:18px;
-      transition:0.3s;
-    }
+nav a:hover{
+  background:#38bdf8;
+  color:#000;
+  transform:translateY(-3px);
+  box-shadow:
+    0 0 10px #38bdf8,
+    0 0 25px #38bdf8,
+    0 0 50px #38bdf8;
+}
 
-    .btn:hover{
-      background:#0284c7;
-    }
+/* =========================
+   HERO
+========================= */
 
-    .services{
-      padding:80px 8%;
-      text-align:center;
-    }
+.hero{
+  width:100%;
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1520869562399-e772f042f422?q=80&w=1600&auto=format&fit=crop');
 
-    .services h2{
-      font-size:40px;
-      margin-bottom:50px;
-      color:#38bdf8;
-    }
+  background-size:cover;
+  background-position:center;
 
-    .service-box{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 
-    .card{
-      background:#1e293b;
-      padding:30px;
-      border-radius:10px;
-      transition:0.3s;
-    }
+  padding:100px 20px;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      background:#334155;
-    }
+.hero-content{
+  max-width:900px;
+}
 
-    .card h3{
-      margin-bottom:15px;
-      color:#38bdf8;
-    }
+.hero h1{
+  font-size:65px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
 
-    .packages{
-      padding:80px 8%;
-      background:#111827;
-      text-align:center;
-    }
+.hero p{
+  font-size:22px;
+  color:#e2e8f0;
+  margin-bottom:35px;
+}
 
-    .packages h2{
-      font-size:40px;
-      margin-bottom:50px;
-      color:#38bdf8;
-    }
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#38bdf8;
+  color:white;
+  padding:15px 35px;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:600;
+  transition:0.4s;
+}
 
-    .package-list{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+.btn:hover{
+  background:#0284c7;
+  transform:scale(1.05);
+  box-shadow:0 0 20px #38bdf8;
+}
 
-    .package{
-      background:#1e293b;
-      padding:35px;
-      border-radius:12px;
-    }
+/* =========================
+   SECTION TITLE
+========================= */
 
-    .package h3{
-      color:#38bdf8;
-      margin-bottom:15px;
-    }
+.section-title{
+  text-align:center;
+  font-size:45px;
+  margin-bottom:60px;
+  color:#38bdf8;
+}
 
-    .price{
-      font-size:35px;
-      margin:20px 0;
-    }
+/* =========================
+   SERVICES
+========================= */
 
-    footer{
-      background:#020617;
-      text-align:center;
-      padding:25px;
-      margin-top:50px;
-    }
+.services{
+  padding:100px 7%;
+}
 
-    @media(max-width:768px){
-      .hero h1{
-        font-size:38px;
-      }
+.service-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
 
-      nav{
-        display:none;
-      }
-    }
-  </style>
+.card{
+  background:#0f172a;
+  padding:40px 30px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.06);
+}
 
-  <style>
+.card:hover{
+  transform:translateY(-10px);
+  background:#1e293b;
+  box-shadow:0 0 30px rgba(56,189,248,0.25);
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:15px;
+  color:#38bdf8;
+}
+
+.card p{
+  color:#cbd5e1;
+  line-height:1.7;
+}
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages{
+  padding:100px 7%;
+  background:#0f172a;
+}
 
 .package-list{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
   gap:30px;
-  padding:50px;
 }
 
 .package{
   background:#1e293b;
-  padding:40px 25px;
-  border-radius:18px;
-  color:white;
-  transition:0.4s ease;
-  cursor:pointer;
+  border-radius:20px;
+  padding:45px 30px;
+  text-align:center;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .package:hover{
-  transform:translateY(-15px) scale(1.05);
-  box-shadow:0 0 25px #38bdf8;
+  transform:translateY(-15px) scale(1.03);
   background:#334155;
+  box-shadow:0 0 30px rgba(56,189,248,0.35);
 }
 
-.package h1{
+.package h3{
+  font-size:28px;
   color:#38bdf8;
-  margin:15px 0;
 }
 
-</style>
-
-
-<style>
-/* Navbar Style */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:20px;
-  background:#0f172a;
+.price{
+  font-size:42px;
+  margin:20px 0;
+  font-weight:700;
 }
 
-/* Glowing Button */
-nav a{
-  position:relative;
-  text-decoration:none;
-  color:white;
-  padding:12px 28px;
-  border:2px solid #00ffff;
-  border-radius:12px;
+.package p{
+  color:#cbd5e1;
   font-size:18px;
-  font-weight:bold;
-  overflow:hidden;
-  transition:0.4s;
-  box-shadow:0 0 10px #00ffff;
 }
 
-/* Hover Effect */
-nav a:hover{
-  background:#00ffff;
-  color:#000;
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff,
-    0 0 80px #00ffff;
-  transform:translateY(-3px) scale(1.05);
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#020617;
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid rgba(255,255,255,0.06);
 }
 
-/* Active Click Effect */
-nav a:active{
-  transform:scale(0.95);
+footer p{
+  color:#94a3b8;
 }
 
-/* Animated Glow */
-nav a::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  transition:0.6s;
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+  header{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:50px;
+  }
+
 }
 
-nav a:hover::before{
-  left:100%;
+@media(max-width:768px){
+
+  .logo{
+    font-size:26px;
+    text-align:center;
+  }
+
+  nav{
+    width:100%;
+    gap:10px;
+  }
+
+  nav a{
+    padding:10px 15px;
+    font-size:14px;
+  }
+
+  .hero{
+    min-height:80vh;
+    padding:80px 15px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .btn{
+    padding:13px 28px;
+    font-size:16px;
+  }
+
+  .section-title{
+    font-size:35px;
+  }
+
+  .services,
+  .packages{
+    padding:70px 20px;
+  }
+
 }
+
+@media(max-width:480px){
+
+  nav{
+    justify-content:center;
+  }
+
+  nav a{
+    width:45%;
+    text-align:center;
+    font-size:13px;
+    padding:10px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .card,
+  .package{
+    padding:30px 20px;
+  }
+
+  .price{
+    font-size:34px;
+  }
+
+}
+
 </style>
-
-
-
 </head>
 
 <body>
 
-  <header>
-   <div class="logo">A1 ONLINE</div>
-</div>
+<!-- HEADER -->
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      
-      <a href="pakage.html">Packages</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://server.aoneonlinebd.net/">FTP</a>
-    </nav>
-  </header>
+<header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Fast Internet Service Provider</h1>
-      <p>Unlimited High Speed Internet For Home & Office</p>
-      <a href="https://wa.me/8801766395683" class="btn">Get Connection</a>
+  <div class="logo">A1 ONLINE</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Packages</a>
+    <a href="#">Contact</a>
+    <a href="https://server.aoneonlinebd.net/" target="_blank">FTP</a>
+  </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Fast Internet Service Provider</h1>
+
+    <p>
+      Unlimited High Speed Internet For Home & Office
+    </p>
+
+    <a href="https://wa.me/8801766395683" class="btn">
+      Get Connection
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="service-box">
+
+    <div class="card">
+      <h3>Home Internet</h3>
+      <p>
+        High speed broadband internet for your home usage.
+      </p>
     </div>
-  </section>
 
-  <section class="services">
-    <h2>Our Services</h2>
-
-    <div class="service-box">
-
-      <div class="card">
-        <h3>Home Internet</h3>
-        <p>High speed broadband internet for your home usage.</p>
-      </div>
-
-      <div class="card">
-        <h3>Office Network</h3>
-        <p>Reliable internet and networking solution for office.</p>
-      </div>
-
-      <div class="card">
-        <h3>24/7 Support</h3>
-        <p>Dedicated support team available anytime.</p>
-      </div>
-
+    <div class="card">
+      <h3>Office Network</h3>
+      <p>
+        Reliable internet and networking solution for office.
+      </p>
     </div>
-  </section>
 
-  <section class="packages">
-    <h2>Internet Packages</h2>
-
-    <div class="package-list">
-
-      <div class="package">
-        <h3>Basic</h3>
-        <div class="price">৳525</div>
-        <p>20 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Standard</h3>
-        <div class="price">৳630</div>
-        <p>25 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Silver</h3>
-        <div class="price">৳735</div>
-        <p>30 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Premium</h3>
-        <div class="price">৳840</div>
-        <p>35 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Gold</h3>
-        <div class="price">৳1050</div>
-        <p>40 Mbps Speed</p>
-      </div>
-
-<div class="package">
-        <h3>Pro</h3>
-        <div class="price">৳1260</div>
-        <p>50 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Platinum</h3>
-        <div class="price">৳1575</div>
-        <p>70 Mbps Speed</p>
-      </div>
-
-      <div class="package">
-        <h3>Diamond</h3>
-        <div class="price">৳2100</div>
-        <p>100 Mbps Speed</p>
-      </div>
-
-
-      <div class="package">
-        <h3>VIP</h3>
-        <div class="price">৳3150</div>
-        <p>150 Mbps Speed</p>
-      </div>
-
-
-      <div class="package">
-        <h3>Elite</h3>
-        <div class="price">৳4200</div>
-        <p>200 Mbps Speed</p>
-        
-      </div>
-
-      
-
-       
-
+    <div class="card">
+      <h3>24/7 Support</h3>
+      <p>
+        Dedicated support team available anytime.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 A1 Online Internet Service Provider</p>
-  </footer>
-   <link rel="stylesheet" href="pakage.css">
+  </div>
+
+</section>
+
+<!-- PACKAGES -->
+
+<section class="packages">
+
+  <h2 class="section-title">Internet Packages</h2>
+
+  <div class="package-list">
+
+    <div class="package">
+      <h3>Basic</h3>
+      <div class="price">৳525</div>
+      <p>20 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Standard</h3>
+      <div class="price">৳630</div>
+      <p>25 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Silver</h3>
+      <div class="price">৳735</div>
+      <p>30 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Premium</h3>
+      <div class="price">৳840</div>
+      <p>35 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Gold</h3>
+      <div class="price">৳1050</div>
+      <p>40 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Pro</h3>
+      <div class="price">৳1260</div>
+      <p>50 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Platinum</h3>
+      <div class="price">৳1575</div>
+      <p>70 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Diamond</h3>
+      <div class="price">৳2100</div>
+      <p>100 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>VIP</h3>
+      <div class="price">৳3150</div>
+      <p>150 Mbps Speed</p>
+    </div>
+
+    <div class="package">
+      <h3>Elite</h3>
+      <div class="price">৳4200</div>
+      <p>200 Mbps Speed</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 A1 ONLINE | All Rights Reserved
+  </p>
+
+</footer>
 
 </body>
 </html>
