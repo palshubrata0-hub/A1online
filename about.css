@@ -53,6 +53,54 @@ html,body{
   line-height:45px;
 }
 
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.menu-btn{
+  display:none;
+  font-size:32px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Mobile Menu */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:row;
+    justify-content:space-between;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:80px;
+    right:20px;
+    background:#0f172a;
+    flex-direction:column;
+    width:220px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(56,189,248,0.3);
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
 /* MOBILE RESPONSIVE */
 @media screen and (max-width:768px){
 
