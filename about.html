@@ -2,27 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About A1 ONLINE</title>
 
   <style>
 
-    body{
+    *{
       margin:0;
-      font-family:Arial;
-      color:white;
+      padding:0;
+      box-sizing:border-box;
     }
 
+    body{
+      font-family:Arial, sans-serif;
+      background:#08122b;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* ======================
+       HEADER
+    ====================== */
+
+    header{
+      background:#0f172a;
+      padding:15px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      color:#00ffff;
+      font-size:30px;
+      font-weight:bold;
+    }
+
+    nav{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      padding:12px 25px;
+      border:2px solid #00ffff;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:bold;
+      transition:0.4s;
+      box-shadow:0 0 10px #00ffff;
+    }
+
+    nav a:hover{
+      background:#00ffff;
+      color:black;
+      box-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff;
+    }
+
+    /* ======================
+       ABOUT SECTION
+    ====================== */
+
     .about{
-      height:100vh;
+      min-height:100vh;
       background:url("your-image.jpg");
       background-size:cover;
       background-position:center;
-
       display:flex;
       align-items:center;
-
-      padding-left:70px;
-
+      justify-content:center;
+      text-align:center;
+      padding:80px 20px;
       position:relative;
     }
 
@@ -31,7 +90,7 @@
       position:absolute;
       width:100%;
       height:100%;
-      background:rgba(0,0,0,0.5);
+      background:rgba(0,0,0,0.6);
       top:0;
       left:0;
     }
@@ -39,274 +98,257 @@
     .about-content{
       position:relative;
       z-index:1;
-      max-width:700px;
+      max-width:800px;
     }
 
     .about-content h1{
-      font-size:65px;
+      font-size:60px;
       margin-bottom:20px;
     }
 
     .about-content p{
-      font-size:28px;
-      line-height:45px;
+      font-size:24px;
+      line-height:40px;
+    }
+
+    /* ======================
+       PARTNERS
+    ====================== */
+
+    .partners{
+      padding:80px 20px;
+      text-align:center;
+    }
+
+    .partners-text h1{
+      font-size:50px;
+      margin-bottom:10px;
+      color:#00bfff;
+    }
+
+    .partners-text p{
+      margin-bottom:40px;
+      font-size:20px;
+    }
+
+    .partners-box{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .partner-card{
+      background:#13203f;
+      padding:20px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .partner-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 15px #00ffff;
+    }
+
+    .partner-card img{
+      width:100%;
+      max-width:120px;
+      height:auto;
+    }
+
+    /* ======================
+       BRANCHES
+    ====================== */
+
+    .branches{
+      padding:80px 20px;
+    }
+
+    .branch-title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:50px;
+      color:#00bfff;
+    }
+
+    .branch-box{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .branch-card{
+      background:#13203f;
+      padding:25px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .branch-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 15px #00ffff;
+    }
+
+    .branch-card h2{
+      margin-bottom:15px;
+      color:#00ffff;
+    }
+
+    .branch-card p{
+      line-height:28px;
+    }
+
+    /* ======================
+       MOBILE RESPONSIVE
+    ====================== */
+
+    @media screen and (max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .logo{
+        font-size:28px;
+      }
+
+      nav{
+        gap:10px;
+      }
+
+      nav a{
+        padding:10px 15px;
+        font-size:14px;
+      }
+
+      .about{
+        min-height:auto;
+        padding:100px 20px;
+      }
+
+      .about-content h1{
+        font-size:38px;
+      }
+
+      .about-content p{
+        font-size:18px;
+        line-height:32px;
+      }
+
+      .partners-text h1,
+      .branch-title{
+        font-size:35px;
+      }
+
+      .partners-text p{
+        font-size:16px;
+      }
+
+      .partners-box{
+        grid-template-columns:repeat(2,1fr);
+      }
+
     }
 
   </style>
-
-
-
-<style>
-/* Navbar Style */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:20px;
-  background:#0f172a;
-}
-
-/* Glowing Button */
-nav a{
-  position:relative;
-  text-decoration:none;
-  color:white;
-  padding:12px 28px;
-  border:2px solid #00ffff;
-  border-radius:12px;
-  font-size:18px;
-  font-weight:bold;
-  overflow:hidden;
-  transition:0.4s;
-  box-shadow:0 0 10px #00ffff;
-}
-
-/* Hover Effect */
-nav a:hover{
-  background:#00ffff;
-  color:#000;
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff,
-    0 0 80px #00ffff;
-  transform:translateY(-3px) scale(1.05);
-}
-
-/* Active Click Effect */
-nav a:active{
-  transform:scale(0.95);
-}
-
-/* Animated Glow */
-nav a::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  transition:0.6s;
-}
-
-nav a:hover::before{
-  left:100%;
-}
-</style>
 </head>
-<head> 
-<link rel="stylesheet" href="about.css">
-</head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
 
-  <div class="logo">A1 ONLINE</div>
+    <div class="logo">A1 ONLINE</div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    
-    <a href="contact.html">Contact</a>
-    <a href="pakage.html">Package</a>
-    <a href="https://server.aoneonlinebd.net/">FTP</a>
-  </nav>
-</header>
-  
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="pakage.html">Package</a>
+      <a href="https://server.aoneonlinebd.net/">FTP</a>
+    </nav>
+
+  </header>
+
+  <!-- ABOUT -->
   <section class="about">
 
-  <div class="about-content">
+    <div class="about-content">
 
-    <h1>About A1 ONLINE</h1>
+      <h1>About A1 ONLINE</h1>
 
-    <p>
-      A1 ONLINE has started its operation in the year 2007 with the commitment
-      of quality internet service at an affordable price.At the time of commencement A1 ONLINE started with broadband service with the state of art technology
-    </p>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-<body>
-
-  
-    <section class="partners">
-
-  <div class="partners-text">
-    <h1>Partners & Members</h1>
-    <p>Honorable partners & members of A1 Online since 2007</p>
-  </div>
-
-  <div class="partners-box">
-
-    <div class="partner-card">
-      <img src="apnic.png" alt="Apnic">
-    </div>
-
-    <div class="partner-card">
-      <img src="Cisco.png" alt="Cisco.png">
-    </div>
-
-    <div class="partner-card">
-      <img src="mikrotik.png" alt="Mikrotik">
-    </div>
-
-    <div class="partner-card">
-      <img src="google.png" alt="Google">
-    </div>
-
-    <div class="partner-card">
-      <img src="youtube.png" alt="Youtube">
-    </div>
-    <div class="partner-card">
-      <img src="facebook.png" alt="Facebook">
+      <p>
+        A1 ONLINE has started its operation in the year 2007 with the commitment
+        of quality internet service at an affordable price.
+        At the time of commencement A1 ONLINE started with broadband service
+        with state of the art technology.
+      </p>
 
     </div>
-
-    <div class="partner-card">
-      <img src="instagram.png" alt="instagram">
-
-    </div>
-
-    <div class="partner-card">
-      <img src="tiktok.png" alt="Tiktok">
-
-    </div>
-
-
-    <div class="partner-card">
-      <img src="whatsapp.png" alt="whatsapp">
-
-    </div>
-    <div class="partner-card">
-      <img src="grena.png" alt="grena">
-
-
-
-    </div>
-
-    <div class="partner-card">
-      <img src="telegram.png" alt="telegram">
-
-
-
-    </div>
-
-
-    <div class="partner-card">
-      <img src="pubg.png" alt="Pubg">
-
-    </div>
-      
-  </div>
-
-</section>
 
   </section>
 
+  <!-- PARTNERS -->
+  <section class="partners">
+
+    <div class="partners-text">
+      <h1>Partners & Members</h1>
+      <p>Honorable partners & members of A1 Online since 2007</p>
+    </div>
+
+    <div class="partners-box">
+
+      <div class="partner-card"><img src="apnic.png"></div>
+      <div class="partner-card"><img src="Cisco.png"></div>
+      <div class="partner-card"><img src="mikrotik.png"></div>
+      <div class="partner-card"><img src="google.png"></div>
+      <div class="partner-card"><img src="youtube.png"></div>
+      <div class="partner-card"><img src="facebook.png"></div>
+      <div class="partner-card"><img src="instagram.png"></div>
+      <div class="partner-card"><img src="tiktok.png"></div>
+      <div class="partner-card"><img src="whatsapp.png"></div>
+      <div class="partner-card"><img src="grena.png"></div>
+      <div class="partner-card"><img src="telegram.png"></div>
+      <div class="partner-card"><img src="pubg.png"></div>
+
+    </div>
+
+  </section>
+
+  <!-- BRANCHES -->
   <section class="branches">
 
-  <h1 class="branch-title">Our Branch Offices</h1>
+    <h1 class="branch-title">Our Branch Offices</h1>
 
-  <div class="branch-box">
+    <div class="branch-box">
 
-    <div class="branch-card">
-      <h2>A1 Online</h2>
+      <div class="branch-card">
+        <h2>A1 Online</h2>
+        <p>Address: 30/10A Tajmahal Road Mohammadpur Dhaka</p>
+        <p>Phone: 01766395683</p>
+      </div>
 
-      <p>
-        Address: 30/10A Tajmahal Road Mohammadpur Dhaka
-      </p>
+      <div class="branch-card">
+        <h2>A1 Online</h2>
+        <p>Address: Road :1 Block :D House :6 Dhaka Uddan Dhaka</p>
+        <p>Phone: 01766395683</p>
+      </div>
 
-      <p>
-        Phone: 01766395683
-      </p>
+      <div class="branch-card">
+        <h2>A1 Online</h2>
+        <p>Address: Road:1 House :8 Bosila Garden City Dhaka</p>
+        <p>Phone: 01766395683</p>
+      </div>
 
-    </div>
-
-    <div class="branch-card">
-      <h2>A1 Online</h2>
-
-      <p>
-        Address:Road :1 Block :D House :6 Dhaka Uddan Dhaka
-      </p>
-
-      <p>
-        Phone: 01766395683
-      </p>
-
-    </div>
-
-    <div class="branch-card">
-      <h2>A1 Online</h2>
-
-      <p>
-        Address: Road:1 House :8 Bosila Garden City  Dhaka
-      </p>
-
-      <p>
-        Phone: 01766395683
-      </p>
+      <div class="branch-card">
+        <h2>A1 Online</h2>
+        <p>Address: Kachari Road Birol Dinajpur</p>
+        <p>Phone: 01766395683</p>
+      </div>
 
     </div>
 
-
-
-
-    <div class="branch-card">
-      <h2>A1 Online</h2>
-
-      <p>
-        Address: Kachari Road Birol Dinajpur
-      </p>
-
-      <p>
-        Phone: 01766395683
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 </body>
 </html>
